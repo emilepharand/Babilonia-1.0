@@ -30,6 +30,20 @@ public class GUIManager {
     private IdeaManager ideaManager;
     private LanguageManager languageManager;
 
+    private final static String WELCOME_MESSAGE =
+            "<html><p style='text-align:center'>" +
+            "<p style='margin-bottom:5;'><b>Welcome to Babilonia!</b></p>" +
+            "<br>" +
+            "<p style='margin-bottom:5;'>We hope you will enjoy using this software :)</p>" +
+            "<br>" +
+            "<p>Let's start by choosing a username.</p>" +
+            "</p></html>";
+    private final static String WELCOME_TITLE = "Welcome";
+    private final static String NO_IDEA_MESSAGE = "Hey there! Please add at least one idea to start.";
+    private final static String NO_LANGUAGE_MESSAGE = "Hey there! Please add at least one language to start.";
+    private final static String NO_PRACTICE_IDEA_MESSAGE = "<html>No idea to practice has been found." +
+            "<br>Please add ideas or let one language not be practice.</html>";
+
     public void createAndShowGUI(DataManager dataManager) {
         try {
             UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
@@ -52,13 +66,7 @@ public class GUIManager {
 
     public void showDefault() {
         if (ideaManager.getIdeaCount() == 0 && languageManager.getLanguageCount() == 0) {
-            showDialog("<html><p style='text-align:center'>" +
-                    "<p style='margin-bottom:5;'><b>Welcome to Babilonia!</b></p>" +
-                    "<br>" +
-                    "<p style='margin-bottom:5;'>We hope you will enjoy using this software :)</p>" +
-                    "<br>" +
-                    "Let's start by choosing a username." +
-                    "</p></html>", "Welcome", new Dimension(500, 200));
+            showDialog(WELCOME_MESSAGE, WELCOME_TITLE, new Dimension(500, 200));
             showPanel(CHANGE_USERNAME_PANEL);
         } else {
             showPanel(DASHBOARD_PANEL);
@@ -139,7 +147,7 @@ public class GUIManager {
             panelShown = true;
         } else if (ideaManager.getIdeaCount() == 0) {
             panelShown = true;
-            showDialog("Hey there! Please add at least one idea to start.", "");
+            showDialog(NO_IDEA_MESSAGE, "");
             showPanel(NEW_IDEA_PANEL);
         }
         return panelShown;
@@ -154,7 +162,7 @@ public class GUIManager {
         boolean panelShown = false;
         if (languageManager.getLanguageCount() < 1) {
             panelShown = true;
-            showDialog("Hey there! Please add at least one language to start.", "");
+            showDialog(NO_LANGUAGE_MESSAGE, "");
             showPanel(ADD_LANGUAGES_PANEL);
         }
         return panelShown;
@@ -169,8 +177,7 @@ public class GUIManager {
         boolean panelShown = false;
         if (ideaManager.getCurrentIdeaId() == -1) {
             panelShown = true;
-            showDialog("<html>No idea to practice has been found." +
-                    "<br>Please add ideas or let one language not be practice.</html>", "");
+            showDialog(NO_PRACTICE_IDEA_MESSAGE, "");
             showPanel(GUIConstants.PANEL_TYPE.SET_PRACTICE_LANGUAGES_PANEL);
         }
         return panelShown;
