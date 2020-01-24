@@ -3,6 +3,7 @@ package GUI;
 import Data.Application.DataManager;
 import Data.Application.IdeaManager;
 import Data.Application.LanguageManager;
+import Data.Application.SettingsManager;
 import GUI.Panels.AbstractPanel;
 import GUI.Panels.Languages.*;
 import GUI.Panels.Languages.SetPracticeLanguagesPanel;
@@ -29,6 +30,7 @@ public class GUIManager {
     private DataManager dataManager;
     private IdeaManager ideaManager;
     private LanguageManager languageManager;
+    private SettingsManager settingsManager;
 
     private final static String WELCOME_MESSAGE =
             "<html><p style='text-align:center'>" +
@@ -43,6 +45,7 @@ public class GUIManager {
     private final static String NO_LANGUAGE_MESSAGE = "Hey there! Please add at least one language to start.";
     private final static String NO_PRACTICE_IDEA_MESSAGE = "<html>No idea to practice has been found." +
             "<br>Please add ideas or let one language not be practice.</html>";
+    private final static String NO_USERNAME_MESSAGE = "Please choose a username.";
 
     public void createAndShowGUI(DataManager dataManager) {
         try {
@@ -53,6 +56,7 @@ public class GUIManager {
         this.dataManager = dataManager;
         ideaManager = dataManager.getIdeaManager();
         languageManager = dataManager.getLanguageManager();
+        settingsManager = dataManager.getSettingsManager();
         mainFrame = new JFrame();
         menu = new Menu(this, dataManager);
         mainFrame.setJMenuBar(menu.getMenuBar());
@@ -87,6 +91,10 @@ public class GUIManager {
         menu.disableIdeaModifying();
         if (panelType == PRACTICE_PANEL || panelType == EDIT_IDEA_PANEL)
             menu.enableIdeaModifying();
+        if (settingsManager.getUsername().isEmpty() && panelType != CHANGE_USERNAME_PANEL) {
+            showDialog(NO_USERNAME_MESSAGE, "");
+            panelType = CHANGE_USERNAME_PANEL;
+        }
         switch (panelType) {
             case PRACTICE_PANEL:
                 ideaManager.goToNextIdea();

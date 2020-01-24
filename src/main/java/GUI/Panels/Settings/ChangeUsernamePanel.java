@@ -4,7 +4,6 @@ import GUI.Factories.ButtonPanelFactory;
 import GUI.Factories.LabelFactory;
 import GUI.Factories.TextFieldFactory;
 import GUI.GUIConstants;
-import GUI.GUIManager;
 import GUI.Panels.AbstractPanel;
 
 import javax.swing.*;
@@ -16,6 +15,7 @@ public class ChangeUsernamePanel extends AbstractPanel {
     private static final String ENTER_USERNAME = "Enter your username :";
     private static final String SAVE_BUTTON_TEXT = "Save";
     private static final String CONFIRMATION_MSG = "Username successfully saved.";
+    private static final String USERNAME_EMPTY_MSG = "Username cannot be empty.";
 
     private JTextField textField;
 
@@ -49,10 +49,13 @@ public class ChangeUsernamePanel extends AbstractPanel {
 
     @Override
     protected void defaultAction() {
-        settingsManager.setUsername(textField.getText());
-        guiManager.showDialog(CONFIRMATION_MSG, "");
-        guiManager.showPanel(GUIConstants.PANEL_TYPE.DASHBOARD_PANEL);
+        if (textField.getText().isEmpty())
+            guiManager.showDialog(USERNAME_EMPTY_MSG, "");
+        else {
+            settingsManager.setUsername(textField.getText());
+            guiManager.showDialog(CONFIRMATION_MSG, "");
+            guiManager.showPanel(GUIConstants.PANEL_TYPE.DASHBOARD_PANEL);
+        }
     }
 
 }
-
