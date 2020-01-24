@@ -12,6 +12,7 @@ import GUI.Panels.Ideas.*;
 
 import javax.swing.*;
 
+import java.awt.*;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 
@@ -52,12 +53,12 @@ public class GUIManager {
     public void showDefault() {
         if (ideaManager.getIdeaCount() == 0 && languageManager.getLanguageCount() == 0) {
             showDialog("<html><p style='text-align:center'>" +
-                    "<p style='margin-bottom:10'>Welcome to The Polyglot's Multi-Vocabulary!</p>" +
+                    "<p style='margin-bottom:5;'><b>Welcome to Babilonia!</b></p>" +
                     "<br>" +
-                    "<p style='margin-bottom:5'>We hope you will enjoy using this software :)</p>" +
+                    "<p style='margin-bottom:5;'>We hope you will enjoy using this software :)</p>" +
                     "<br>" +
                     "Let's start by choosing a username." +
-                    "</p></html>", "Welcome");
+                    "</p></html>", "Welcome", new Dimension(500, 200));
             showPanel(CHANGE_USERNAME_PANEL);
         } else {
             showPanel(DASHBOARD_PANEL);
@@ -192,6 +193,21 @@ public class GUIManager {
      */
     public void showDialog(String msg, String title) {
         JLabel label = new JLabel(msg);
+        label.setFont(DEFAULT_FONT);
+        JOptionPane.showMessageDialog(mainFrame.getContentPane(), label,
+                title, JOptionPane.INFORMATION_MESSAGE);
+    }
+
+    /**
+     * Shows a dialog box to the user with specified dimension.
+     *
+     * @param msg       message
+     * @param title     dialog title
+     * @param dimension desired dimension
+     */
+    public void showDialog(String msg, String title, Dimension dimension) {
+        JLabel label = new JLabel(msg);
+        label.setPreferredSize(dimension);
         label.setFont(DEFAULT_FONT);
         JOptionPane.showMessageDialog(mainFrame.getContentPane(), label,
                 title, JOptionPane.INFORMATION_MESSAGE);

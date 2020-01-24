@@ -48,8 +48,8 @@ public class Menu {
 
     private static final String HELP = "Help";
     private static final String GITHUB_PAGE = "GitHub Page";
-    private static final String GITHUB_PAGE_URL = "https://github.com/emilepharand/Multi-Vocabulary";
-    private static final String GITHUB_PAGE_ERROR = "Visit https://github.com/emilepharand/Multi-Vocabulary";
+    private static final String GITHUB_PAGE_URL = "https://github.com/emilepharand/Babilonia";
+    private static final String GITHUB_PAGE_ERROR = "Visit https://github.com/emilepharand/Babilonia";
     private static final String ABOUT = "About";
     private static final String ABOUT_TEXT = "<html><center>Copyright © 2020 Émile Pharand" +
             "<br>All rights reserved.<br><br>" +
