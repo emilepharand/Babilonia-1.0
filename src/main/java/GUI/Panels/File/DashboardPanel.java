@@ -41,17 +41,6 @@ public class DashboardPanel extends AbstractPanel {
 
     private void addRow(int languageId) {
         int numberOfIdeaForLanguage = languageManager.getIdeaCountForLanguage(languageId);
-
-        if (languageId == 1) numberOfIdeaForLanguage = 7532;
-        if (languageId == 0) numberOfIdeaForLanguage = 4887;
-        if (languageId == 2) numberOfIdeaForLanguage = 1054;
-        if (languageId == 3) numberOfIdeaForLanguage = 3245;
-        if (languageId == 4) numberOfIdeaForLanguage = 681;
-        if (languageId == 5) numberOfIdeaForLanguage = 542;
-        if (languageId == 6) numberOfIdeaForLanguage = 199;
-        if (languageId == 7) numberOfIdeaForLanguage = 318;
-        if (languageId == 8) numberOfIdeaForLanguage = 54;
-
         String labelText = ROW_TEXT_1 + NumberFormat.getIntegerInstance()
                 .format(numberOfIdeaForLanguage) + ROW_TEXT_2
                 + languageManager.getLanguageName(languageId) + ROW_TEXT_3;
