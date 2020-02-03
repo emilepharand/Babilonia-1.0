@@ -8,14 +8,13 @@ their vocabulary in foreign languages.
 Unlike traditionnal methods, Babilonia lets you practice multiple languages *at the same time*! 
 :heart_eyes:
 
-
 ## Features
 
 - Lets you memorize a *maximum* amount of words in a *minimum* amount of time
-- Contains clever tricks to help you remember as you type
+- Contains clever tricks to help you remember as you're typing
 - Keeps track of how many words you know in each language
 - Uses a novel method based on universal ideas
-- Allows you to practice multiple languages all at once!
+- Allows you to practice any set of languages all at once!
 
 ## What's the deal?
 
@@ -23,58 +22,69 @@ Unlike traditionnal methods, Babilonia lets you practice multiple languages *at 
 
 The core component of Babilonia is its practice feature.
 
-An idea shows up in the language(s) of your choice, and you get to practice it in all other languages.
+An idea shows up (in any language you want), and you get to practice it (in any other language you want).
 
 An idea could be a thing, an expression or even a whole sentence. You're the boss!
 
 ![Example 1](images/example1.png)
 
-### Powerful help
+### Powerful help as you're typing
 
-As you're typing, Babilonia helps you by coloring letters in green if you're on the right 
-track or red if not.
+Babilonia gives you feedback by coloring each letter you type in green if you're on the right track, or red otherwise.
 
-By helping you recall the word by yourself without having to look for the answer, 
-your brain will more easily remember it the next time. :wink:
+- By helping you recall the words by yourself, your brain will more easily remember them the next time :wink:
 
 ![Example 2](images/example2.png)
 
-### More powerful help
+### Hints go a long way
 
-Press the Hint button to have a letter revealed to you, which may well spark a sudden insight
-in your mind. Again, that helps your brain create neural pathways it would otherwise not if the answer 
-was given out in full to you the first time!
+Press the Hint button to have a letter revealed to you, which may very well spark a sudden insight in your mind.
+
+- Again, that helps your brain create neural pathways it would otherwise not if the answer
+was given out to you in full!
 
 Of course, if you really don't know, you can always just press the Full button.
 
-### Different spellings
+### Different spellings for an easier life
 
-You can have as many spellings as you want for any given word. Simply separate them by slashes, 
-and they will all be accepted.
+Since you can practice wildly different languages with very different written alphabets and symbols,
+you may not want to constantly be messing with your keyboard settings and remembering how to type specific
+letters/characters/logograph/etc.
 
-For example, if you have
+In Babilonia, you can have as many spellings as you want for any given word.
+Simply separate them by slashes, and they will all be accepted. The correct spelling will still be shown 
+to you afterwards (if you specified so), so you don't forget the _real_ spelling :wink:
 
-- "苹果 / pín guǒ / pin guo" -> whether you type "苹果", "pín guǒ" or "pin guo", they will all be valid!
+For example, if you have :
+
+- "être pressé / etre presse" -> both "être pressé" and "etre presse" will be accepted
+- "mañana / manana" -> both "mañana" and "manana" will be accepted
+- "苹果 / pín guǒ / pin guo" -> "苹果", "pín guǒ" and "pin guo" will all be accepted
+- and so on...
 
 ### Optional elements
 
 You can also add optional elements around words by putting them in parentheses.
 
 For example, if you have
-- "(der) Apfel" -> both "der Apfel" and "Apfel" will be valid!
+- "(to) understand" -> both "to understand" and "understand" will be valid
+- "(der) Apfel" -> both "der Apfel" and "Apfel" will be valid
+- and so on...
 
-This feature is very useful to provide context too, for example play (guitar) as opposed to play (soccer).
+This feature is very useful to provide context too, for example play (guitar) as opposed to play (soccer)!
 
 ## Picking which languages to practice
 
-Even though you *could* practice all the languages you know at the same time, it doesn't mean you always *have* to! 
+Even though you *could* practice tons of languages at the same time, it doesn't mean you always *have* to!
 Maybe you'd  like to focus on some languages.
 
 You can choose which languages you would like to study in Languages -> Set Practice Languages.
 
 Words whose languages are set to "practice" will be hidden when practicing,
 and others will show. Also, ideas which do not have any words with languages set to "practice" will
-not show up when practicing. 
+not show up when practicing.
+
+A very important feature of Babilonia is its flexibility when it comes to practicing different sets of languages.
 
 ## The goal
 
@@ -109,6 +119,9 @@ to share theirs!
     cd Babilonia
     mvn package
     cp target/Babilonia.jar database.db /your/install/path/
+
+Then, to run it :
+
     java -jar /your/install/path/Babilonia.jar
 
 ## License
@@ -125,5 +138,4 @@ Do not hesitate to contact me at emile.pharand.github@gmail.com :smile:
 <br>
 <br>
 <br>
-<sub>People often say that motivation doesn't last. Well, neither does bathing — that's why we recommend it daily.
-\- Zig Ziglar</sub>
+<sub>People often say that motivation doesn't last. Well, neither does bathing — that's why we recommend it daily. - Zig Ziglar</sub>
