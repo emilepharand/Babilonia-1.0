@@ -32,6 +32,7 @@ public class NewIdeaPanel extends AbstractIdeaModifyPanel {
     protected void addRows() {
         addRowsFromColumns();
         loadLanguageContext();
+        SwingUtilities.invokeLater(rightColumn.get(0)::requestFocusInWindow);
     }
 
     /**
