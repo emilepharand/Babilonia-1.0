@@ -170,6 +170,7 @@ public class IdeaManager {
     public void addWordFromGUI(int ideaId, int languageId, String wordString) {
         int wordId = getNewWordId();
         addWord(wordId, ideaId, languageId, wordString);
+        wordString = wordString.replaceAll("'", "''");
         database.insertWord(wordId, ideaId, languageId, wordString);
         newPracticeListNeeded = true;
     }

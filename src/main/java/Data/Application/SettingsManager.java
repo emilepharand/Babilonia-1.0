@@ -22,7 +22,7 @@ public class SettingsManager {
     }
 
     public void setUsername(String username) {
-        database.updateSetting("username", username);
+        database.updateSetting("username", username.replaceAll("'", "''"));
         settings.put("username", username);
     }
 

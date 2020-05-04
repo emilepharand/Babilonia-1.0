@@ -49,6 +49,7 @@ public class LanguageManager {
             int id = getNextAvailableLanguageId();
             int order = getNextAvailableOrder();
             createLanguageWithDetails(id, name, order, false);
+            name = name.replaceAll("'", "''");
             database.insertLanguage(id, name, order, false);
         }
     }
@@ -227,6 +228,7 @@ public class LanguageManager {
      */
     public void changeLanguageName(int id, String name) {
         getLanguageById(id).setName(name);
+        name = name.replaceAll("'", "''");
         database.updateLanguageName(id, name);
     }
 

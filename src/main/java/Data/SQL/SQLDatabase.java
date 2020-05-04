@@ -150,7 +150,7 @@ public class SQLDatabase implements Database {
     @Override
     public void insertLanguage(int id, String name, int order, boolean practice) {
         String query = "INSERT INTO languages(id, name, \"order\", practice) " +
-                "VALUES(\"" + id + "\", \"" + name + "\"," + order + ", \"" + practice + "\")";
+                "VALUES(" + id + ", '" + name + "'," + order + ", \"" + practice + "\")";
         String errorMsg = ("Fatal database error while adding new language.");
         executeUpdate(query, errorMsg);
     }
@@ -163,8 +163,8 @@ public class SQLDatabase implements Database {
      */
     @Override
     public void updateLanguageName(int id, String newName) {
-        String query = "UPDATE languages SET \"name\" = \"" + newName
-                + "\" WHERE \"id\" = \"" + id + "\"";
+        String query = "UPDATE languages SET \"name\" = '" + newName
+                + "' WHERE \"id\" = \"" + id + "\"";
         String errorMsg = ("Fatal database error while updating language name.");
         executeUpdate(query, errorMsg);
     }
@@ -219,8 +219,8 @@ public class SQLDatabase implements Database {
      */
     @Override
     public void updateSetting(String name, String value) {
-        String query = "UPDATE settings SET \"value\" = \"" + value
-                + "\" WHERE name = \"" + name + "\"";
+        String query = "UPDATE settings SET \"value\" = '" + value
+                + "' WHERE name = \"" + name + "\"";
         String errorMsg = ("Fatal database error while updating username.");
         executeUpdate(query, errorMsg);
     }
