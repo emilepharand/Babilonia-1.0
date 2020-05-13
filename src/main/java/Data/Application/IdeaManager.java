@@ -348,7 +348,7 @@ public class IdeaManager {
                 .parallelStream()
                 .filter(entry -> entry.getValue()
                         .getWords()
-                        .stream().anyMatch(x -> x.getWordMainSpelling().equals(searchText)))
+                        .stream().anyMatch(x -> x.getSpellings().stream().anyMatch(y->y.contains(searchText))))
                 .map(Map.Entry::getValue)
                 .map(Idea::getId)
                 .collect(Collectors.toCollection(ArrayList::new));
