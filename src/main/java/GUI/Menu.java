@@ -11,50 +11,13 @@ import java.net.URISyntaxException;
 
 import static GUI.GUIConstants.MENU_FONT;
 import static GUI.GUIConstants.PANEL_TYPE.*;
+import static GUI.MenuElements.*;
 
 public class Menu {
 
     private JMenuBar menuBar;
     private JMenuItem menuEdit;
     private JMenuItem menuDelete;
-
-    private static final String FILE = "File";
-    private static final String DASHBOARD = "Dashboard";
-    private static final String PRACTICE_IDEAS = "Practice Ideas";
-
-    private static final String IDEAS = "Ideas";
-    private static final String NEW_IDEA = "New Idea";
-    private static final String EDIT_IDEA = "Edit";
-    private static final String DELETE_IDEA = "Delete";
-    private static final String DELETE_IDEA_CONFIRM_MSG = "Are you sure you want to delete this idea?";
-    private static final String DELETE_IDEA_CONFIRM_TITLE = "Are you sure?";
-    private static final String SEARCH_IDEA = "Search";
-
-    private static final String LANGUAGES = "Languages";
-    private static final String ADD_LANGUAGES = "Add Languages";
-    private static final String MODIFY_LANGUAGES = "Modify";
-    private static final String DELETE_LANGUAGES = "Delete";
-    private static final String SEARCH_LANGUAGES = "Search";
-    private static final String SET_ORDER = "Set Order";
-    private static final String SET_PRACTICE = "Set Practice";
-
-    private static final String SETTINGS = "Settings";
-    private static final String CHANGE_USERNAME = "Change Username";
-    private static final String RESET_EVERYTHING = "Reset Everything";
-    private static final String RESET_CONFIRM_MSG = "<html>Are you sure you want to reset settings?<br>" +
-            "This action cannot be undone!</html>";
-    private static final String RESET_CONFIRM_TITLE = "Are you sure?";
-    private static final String RESET_CONFIRMATION = "Settings have been reset.";
-
-    private static final String HELP = "Help";
-    private static final String GITHUB_PAGE = "GitHub Page";
-    private static final String GITHUB_PAGE_URL = "https://github.com/emilepharand/Babilonia";
-    private static final String GITHUB_PAGE_ERROR = "Visit https://github.com/emilepharand/Babilonia";
-    private static final String ABOUT = "About";
-    private static final String ABOUT_TEXT = "<html><center>Copyright © 2020 Émile Pharand" +
-            "<br>All rights reserved.<br><br>" +
-            "This work is licensed under the terms of the MIT license.<br>" +
-            "For a copy, see https://opensource.org/licenses/MIT</center></html>";
     
     private GUIManager guiManager;
     private DataManager dataManager;

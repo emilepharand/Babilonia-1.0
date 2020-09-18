@@ -46,4 +46,8 @@ public class TopContainer {
         mainFrame.setVisible(true);
     }
 
+    public void pack() {
+        mainFrame.pack();
+    }
+
 }

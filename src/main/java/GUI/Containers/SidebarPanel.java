@@ -9,10 +9,14 @@ public class SidebarPanel {
 
     public SidebarPanel() {
         panel = new JPanel();
-        panel.setLayout(new FlowLayout(FlowLayout.LEFT, 0, 0));
+        panel.setLayout(new BorderLayout(0,0));
         panel.setPreferredSize(new Dimension(TopContainer.sideBarWidth, TopContainer.screenHeight));
         panel.setBackground(Color.BLUE);
         panel.setVisible(true);
+    }
+
+    public JPanel getJPanel() {
+        return panel;
     }
 
 }
