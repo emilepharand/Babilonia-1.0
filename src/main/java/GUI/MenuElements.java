@@ -5,6 +5,8 @@ import java.util.Arrays;
 
 public class MenuElements {
 
+    public static final int SIDEBAR_MENU_ROW_HEIGHT = 50;
+
     public static final String FILE = "File";
     public static final String DASHBOARD = "Dashboard";
     public static final String PRACTICE_IDEAS = "Practice Ideas";
@@ -44,7 +46,7 @@ public class MenuElements {
             "For a copy, see https://opensource.org/licenses/MIT</center></html>";
 
     public static final ArrayList<String> SIDEBAR_MENU_ITEMS_IDEAS
-            = new ArrayList<>(Arrays.asList(IDEAS,NEW_IDEA,DELETE_IDEA,SEARCH_IDEA));
+            = new ArrayList<>(Arrays.asList(NEW_IDEA,DELETE_IDEA,SEARCH_IDEA));
     public static final ArrayList<String> SIDEBAR_MENU_ITEMS_LANGUAGES
             = new ArrayList<>(Arrays.asList(ADD_LANGUAGES,MODIFY_LANGUAGES,DELETE_LANGUAGES,SEARCH_LANGUAGES));
 

@@ -1,9 +1,6 @@
-import Data.Application.DataManager;
 import GUI.Containers.ContentPanel;
 import GUI.Containers.SidebarPanel;
 import GUI.Containers.TopContainer;
-import GUI.GUIManager;
-import GUI.SidebarMenu;
 
 public class Babilonia {
 
@@ -18,8 +15,7 @@ public class Babilonia {
         TopContainer topContainer = new TopContainer();
 
         SidebarPanel sidebar = new SidebarPanel();
-        SidebarMenu sideBarMenu = new SidebarMenu();
-        sideBarMenu.init(sidebar);
+        sidebar.init();
 
         ContentPanel content = new ContentPanel();
 

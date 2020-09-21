@@ -7,6 +7,14 @@ import static GUI.GUIConstants.*;
 
 public class PanelFactory {
 
+    public static JPanel createOneColumnPanel(Dimension dim) {
+        JPanel oneColumnPanel = new JPanel();
+        oneColumnPanel.setPreferredSize(dim);
+        oneColumnPanel.setLayout(new BorderLayout(0, 0));
+        oneColumnPanel.setOpaque(false);
+        return oneColumnPanel;
+    }
+
     public static JPanel createOneColumnPanel() {
         JPanel oneColumnPanel = new JPanel();
         oneColumnPanel.setPreferredSize(new Dimension(WINDOW_WIDTH, ROW_HEIGHT));
