@@ -4,6 +4,9 @@ import Data.Application.DataManager;
 import Data.Application.IdeaManager;
 import Data.Application.LanguageManager;
 import Data.Application.SettingsManager;
+import GUI.Containers.ContentPanel;
+import GUI.Containers.SidebarPanel;
+import GUI.Containers.TopContainer;
 import GUI.Panels.AbstractPanel;
 import GUI.Panels.Languages.*;
 import GUI.Panels.Languages.SetPracticeLanguagesPanel;
@@ -26,11 +29,15 @@ import static GUI.GUIConstants.PANEL_TYPE.*;
 public class GUIManager {
 
     private Menu menu;
-    private JFrame mainFrame;
     private DataManager dataManager;
     private IdeaManager ideaManager;
     private LanguageManager languageManager;
     private SettingsManager settingsManager;
+
+    private JFrame mainFrame;
+    private TopContainer topContainer;
+    private SidebarPanel sidebar;
+    ContentPanel content;
 
     private final static String WELCOME_MESSAGE =
             "<html><p style='text-align:center'>" +
@@ -53,19 +60,24 @@ public class GUIManager {
         } catch (Exception e) {
             // do nothing
         }
+
         this.dataManager = dataManager;
         ideaManager = dataManager.getIdeaManager();
         languageManager = dataManager.getLanguageManager();
         settingsManager = dataManager.getSettingsManager();
-        mainFrame = new JFrame();
+
+        topContainer = new TopContainer(dataManager);
+        sidebar = new SidebarPanel();
+        sidebar.init();
+        content = new ContentPanel();
+
         menu = new Menu(this, dataManager);
-        mainFrame.setJMenuBar(menu.getMenuBar());
-        mainFrame.addWindowListener(new WindowAdapter() {
-            public void windowClosing(WindowEvent e) {
-                dataManager.cleanShutDown();
-            }
-        });
-        showDefault();
+        topContainer.setMenuBar(menu.getMenuBar());
+
+        topContainer.pack();
+        topContainer.show(sidebar, content);
+
+        //showDefault();
     }
 
     public void showDefault() {
